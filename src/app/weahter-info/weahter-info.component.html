@@ -1,13 +1,19 @@
-<div class="container">
-  <p class="country">Tunisia</p>
-  <img src="https://www.weatherbit.io/static/img/icons/c02d.png">
-  <p class="weatherCondition">Scattered clouds</p>
-  <p class="temp">20°</p>
+<aside>
+  <form>
+    <input type="text" class="city" autocomplete="off" [(ngModel)]="name" value="Enter your city name here..." name="city" onclick="this.value = ' '">
+    <button type="submit" class="submit"(click)="fethByName()">SUBMIT</button>
+    </form>
+</aside>
+<div class="container" *ngIf="weatherData">
+  <p class="country">{{weatherData.data[0].city_name}}</p>
+  <img [src]="'https://www.weatherbit.io/static/img/icons/'+weatherData.data[0].weather.icon+'.png'">
+  <p class="weatherCondition">{{weatherData.data[0].weather.description}}</p>
+  <p class="temp">{{weatherData.data[0].temp}}°</p>
     <aside style="display: flex">
         <img src="/assets/wi-sandstorm.svg" height="60px" width="60px">
-        <span style="padding-top: 1em; margin-right: 24px; color: gray">20 m/s</span>
+        <span style="padding-top: 1em; margin-right: 24px; color: gray">{{weatherData.data[0].wind_spd}} m/s</span>
 
         <img  src="/assets/rain.svg" style="padding-top: 12px" height="35px" width="40px">
-        <span style="padding-top: 1em; color: gray" >20 mm/h</span>
+        <span style="padding-top: 1em; color: gray" >{{weatherData.data[0].precip}} mm/h</span>
     </aside>
 </div>

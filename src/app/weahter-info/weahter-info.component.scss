@@ -5,11 +5,10 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   background-color: white;
-  width: 300px;
-  height: 450px;
   justify-items: center;
+  text-align: center;
   display: grid;
-  padding-top: 1px;
+  padding: 1em;
 }
 .country{
   text-transform: uppercase;
@@ -21,13 +20,35 @@
 .temp{
   font-size: 4rem;
   margin: 0px;
-  padding: 0 0 0 20px ;
+  padding: 0 0 0 10px;
   font-weight: 100;
   letter-spacing: 0.1rem;
 }
 .weatherCondition{
   color: gray;
   display: block;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
+}
+.city{
+  background-color: transparent;
+  border: solid white;
+  border-width: 2px;
+  width: 15em;
+  padding: 0.5em 1em;
+  margin: 1em;
+  font-size: medium;
+  color: white;
+  border-radius: 20px;
+  font-family: 'Nunito', 'sans-serif';
+}
+.submit{
+  background-color: transparent;
+  border: solid lightgreen;
+  border-radius: 20px;
+  color: lightgreen;
+  font-size: medium;
+  padding: 0.5em 1em;
+  font-family: 'Nunito', 'sans-serif';
+
 }
